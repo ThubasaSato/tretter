@@ -2,6 +2,8 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 // import { Provider as ReduxProvider } from 'react-redux';
 
+import 'src/styles/css/reset.css';
+
 function MyApp({ Component, pageProps }: AppProps){
   return (
     <>
