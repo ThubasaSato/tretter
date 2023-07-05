@@ -22,9 +22,28 @@ export const Header: FC<IProps> = ({ pageTitle }) => (
         </div>
       </div>
 
+    <div className="header-buttons">
       <Link href="/">
-        Home
+        <span>
+          Home
+        </span>
       </Link>
+      <Link href="/">
+        <span>
+          プロフィール
+        </span>
+      </Link>
+      <Link href="/">
+        <span>
+          設定
+        </span>
+      </Link>
+      <Link href="/">
+        <span>
+          ログアウト
+        </span>
+      </Link>
+    </div>
 
     </header>
     <style jsx>{`
@@ -34,6 +53,9 @@ export const Header: FC<IProps> = ({ pageTitle }) => (
       }
       .ea-logo-box {
         margin: 0 30px;
+      }
+      .header-buttons span {
+        margin-left: 10px;
       }
       h1, h2 {
         padding: 0;
