@@ -16,12 +16,3 @@ export const downLoadCsvClient = axios.create({
   headers: { accept: 'text/csv', timeout: 1000 * 60 },
   responseType: 'blob',
 });
-
-export const generateS3Client = (contentType: string) =>
-  axios.create({
-    headers: {
-      'Content-Type': contentType,
-      accept: 'application/json',
-      timeout: 1000 * 60,
-    },
-  });
