@@ -9,7 +9,7 @@ import { postUsers } from "src/api/users";
 
 export const SignUp: FC = () => {
   const { register, handleSubmit, formState } = useForm<UserNewFormSchema>({
-    mode: 'onChange',
+    mode: "onChange",
     resolver: zodResolver(schema),
   });
 
@@ -27,8 +27,8 @@ export const SignUp: FC = () => {
 
   const handleClick = async (data: UserNewFormSchema) => {
     if (!isDirty || !isValid) {
-      return
-    };
+      return;
+    }
     await createUserRequest(data);
   };
 
