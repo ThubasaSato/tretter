@@ -1,12 +1,10 @@
-import type { FC } from 'react';
-import { postTretterTickets } from '@/api/tretterTickets/postTretterTickets';
+import type { FC } from "react";
+import { postTretterTickets } from "src/api/tretterTickets/postTretterTickets";
 // import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import { z } from "zod";
 
 export const MyTodo: FC = () => {
-
-
-  const postTodo = async(e:any) => {
+  const postTodo = async (e: any) => {
     e.preventDefault();
     await postTretterTickets();
   };
@@ -20,8 +18,8 @@ export const MyTodo: FC = () => {
         <label>
           <input type="text" />
         </label>
-        <button type='submit'>ボタン</button>
+        <button type="submit">ボタン</button>
       </form>
     </>
   );
-}
+};
