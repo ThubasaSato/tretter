@@ -1,11 +1,11 @@
-import type { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from "react";
 
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { Header } from '../Header';
-import { Footer } from '../Footer';
-import { Sidebar } from '../Sidebar';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { Header } from "../Header";
+import { Footer } from "../Footer";
+import { Sidebar } from "../Sidebar";
 
 interface IProps {
   pageTitle: string;
@@ -13,25 +13,26 @@ interface IProps {
 }
 
 export const Layout: FC<IProps> = ({ children, pageTitle }) => {
-
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
       </Head>
 
-      <Header pageTitle={pageTitle}/>
-      <div className='sc-wrap'>
-        <Sidebar/>
+      <Header pageTitle={pageTitle} />
+      <div className="sc-wrap">
+        <Sidebar />
         {children}
       </div>
 
-      <Footer/>
+      <Footer />
       <style jsx>{`
         .sc-wrap {
           display: flex;
+          border: solid 1px gray;
+          border-radius: 4px;
         }
       `}</style>
     </>
   );
-}
+};

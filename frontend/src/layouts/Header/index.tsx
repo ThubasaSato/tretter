@@ -1,7 +1,7 @@
-import type { FC } from 'react';
-import Link from 'next/link';
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
+import type { FC } from "react";
+import Link from "next/link";
+import { NextPage } from "next";
+import { useRouter } from "next/router";
 
 interface IProps {
   pageTitle: string;
@@ -11,9 +11,7 @@ export const Header: FC<IProps> = ({ pageTitle }) => (
   <>
     <header className="ea-header">
       <div className="ea-logo-box">
-        <h1 className="ea-logo">
-          tretter
-        </h1>
+        <h1 className="ea-logo">tretter</h1>
       </div>
 
       <div className="ea-page-ttl-wrap">
@@ -22,29 +20,20 @@ export const Header: FC<IProps> = ({ pageTitle }) => (
         </div>
       </div>
 
-    <div className="header-buttons">
-      <Link href="/">
-        <span>
-          Home
-        </span>
-      </Link>
-      <Link href="/">
-        <span>
-          プロフィール
-        </span>
-      </Link>
-      <Link href="/">
-        <span>
-          設定
-        </span>
-      </Link>
-      <Link href="/">
-        <span>
-          ログアウト
-        </span>
-      </Link>
-    </div>
-
+      <div className="header-buttons">
+        <Link href="/">
+          <span>Home</span>
+        </Link>
+        <Link href="/">
+          <span>プロフィール</span>
+        </Link>
+        <Link href="/">
+          <span>設定</span>
+        </Link>
+        <Link href="/">
+          <span>ログアウト</span>
+        </Link>
+      </div>
     </header>
     <style jsx>{`
       header {
@@ -54,10 +43,18 @@ export const Header: FC<IProps> = ({ pageTitle }) => (
       .ea-logo-box {
         margin: 0 30px;
       }
+      .header-buttons {
+      }
+      .ea-header {
+        border: solid 1px gray;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
       .header-buttons span {
         margin-left: 10px;
       }
-      h1, h2 {
+      h1,
+      h2 {
         padding: 0;
         margin: 0;
       }

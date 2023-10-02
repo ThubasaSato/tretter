@@ -1,7 +1,7 @@
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { routeMap } from '../util/routeMap';
+import { NextPage } from "next";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { routeMap } from "../util/routeMap";
 
 const TopPage: NextPage = () => {
   const router = useRouter();
@@ -11,6 +11,6 @@ const TopPage: NextPage = () => {
   }, [router]);
 
   return null;
-}
+};
 
 export default TopPage;
