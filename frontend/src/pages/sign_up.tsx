@@ -1,5 +1,5 @@
-import { SignUp } from "../components/SignUp";
-import { Layout } from "src/layouts/Layout";
+import { SignUp } from '../components/SignUp';
+import { Layout } from 'src/layouts/Layout';
 
 const SignUpPage = () => (
   <Layout pageTitle="Sign Up">
