@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Api::V1::Devise::UserSessions' do
+RSpec.describe 'Api::V1::Devise::CurrentUsers' do
   describe 'GET /index' do
     pending "add some examples (or delete) #{__FILE__}"
   end

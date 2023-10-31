@@ -14,21 +14,18 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  # Enable server timing
-  config.server_timing = true
-
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join("tmp/caching-dev.txt").exist?
+  if Rails.root.join('tmp', 'caching-dev.txt').exist?
     # config.cache_store = :memory_store
-    config.cache_store = :redis_cache_store, { expires_in: 7.days,
-      namespace: "#{Rails.application.class.module_parent_name.downcase}:#{
-          (ENV.fetch('RAILS_ENV', 'development') + ':').then.detect { |e| e != 'production:' }
-        }cache",
-      url: "redis://#{ENV.fetch('REDIS_HOST', 'localhost')}:#{ENV.fetch('REDIS_PORT', '6379')}/0" }
+    config.cache_store = :redis_cache_store, { expires_in: 7.days, # TODO: 仮設定
+                                               namespace: "#{Rails.application.class.module_parent_name.downcase}:#{
+                                                   (ENV.fetch('RAILS_ENV', 'development') + ':').then.detect { |e| e != 'production:' }
+                                                 }cache",
+                                               url: "redis://#{ENV.fetch('REDIS_HOST', 'localhost')}:#{ENV.fetch('REDIS_PORT', '6379')}/0" }
 
     config.public_file_server.headers = {
-      "Cache-Control" => "public, max-age=#{2.days.to_i}"
+      'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -59,15 +56,6 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-  # config.after_initialize do
-  #   Bullet.enable = true
-  # end
-
-  # config for active_record_query_trace
-  # ActiveRecordQueryTrace.enabled = ENV['ACTIVE_RECORD_QUERY_TRACE_ENABLED'] == 'true'
-
-  # 開発環境では全てのホストを許可
-  config.hosts.clear
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
@@ -75,6 +63,20 @@ Rails.application.configure do
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 
+  # Use an evented file watcher to asynchronously detect changes in source code,
+  # routes, locales, etc. This feature depends on the listen gem.
+  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  config.after_initialize do
+    Bullet.enable = true
+  end
+
+  # config for active_record_query_trace
+  ActiveRecordQueryTrace.enabled = ENV['ACTIVE_RECORD_QUERY_TRACE_ENABLED'] == 'true'
+
+  # 開発環境では全てのホストを許可
+  config.hosts.clear
 end
