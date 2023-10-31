@@ -1,7 +1,7 @@
-import type { FC } from "react";
-import { postTretterTickets } from "src/api/tretterTickets/postTretterTickets";
+import type { FC } from 'react';
+import { postTretterTickets } from 'src/api/tretterTickets/postTretterTickets';
 // import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from "zod";
+import { z } from 'zod';
 
 export const MyTodo: FC = () => {
   const postTodo = async (e: any) => {

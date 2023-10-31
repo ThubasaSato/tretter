@@ -1,8 +1,8 @@
-import type { IHandleApiResponseRet, ApiError } from "./axiosHandlers";
+import type { IHandleApiResponseRet, ApiError } from './axiosHandlers';
 
-import { httpClient, handleApiError, handleApiResponse } from "./axiosHandlers";
+import { httpClient, handleApiError, handleApiResponse } from './axiosHandlers';
 
-const BASE_PATH = "/api/v1/users";
+const BASE_PATH = '/users';
 
 // ========== POST /api/v1/users ==========
 type PostUsersReq = {
@@ -10,12 +10,10 @@ type PostUsersReq = {
   email: string;
   password: string;
 };
-type PostUsersResp = "";
+type PostUsersResp = '';
 type PostUsersRet = IHandleApiResponseRet<PostUsersResp> | ApiError;
 
-export const postUsers = async (
-  params: PostUsersReq,
-): Promise<PostUsersRet> => {
+export const postUsers = async (params: PostUsersReq): Promise<PostUsersRet> => {
   try {
     const response = await httpClient.post<PostUsersResp>(BASE_PATH, params);
     return handleApiResponse<PostUsersResp>({ response, expectedStatus: 204 });

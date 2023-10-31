@@ -1,7 +1,7 @@
-import type { FC } from "react";
-import Link from "next/link";
-import { MainButton } from "./Buttons/MainButton";
-import { Timeline } from "./Timelines";
+import type { FC } from 'react';
+import Link from 'next/link';
+import { MainButton } from './Buttons/MainButton';
+import { Timeline } from './Timelines';
 
 export const Dashboard: FC = () => {
   return (

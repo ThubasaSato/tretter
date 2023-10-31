@@ -1,5 +1,5 @@
-import { MyTodo } from "../components/MyTodo";
-import { Layout } from "src/layouts/Layout";
+import { MyTodo } from '../components/MyTodo';
+import { Layout } from 'src/layouts/Layout';
 
 const MyTodoPage = () => (
   <>
