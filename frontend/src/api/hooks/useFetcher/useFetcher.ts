@@ -22,9 +22,9 @@ interface IUseFetcherRet<RespBody> {
   error: ApiError | undefined;
   mutate: (dataToMutate?: RespBody) => Promise<void>;
   // If both data and error are undefined, return true.
-  inProgress: boolean;
-  // If api request is not executed, return true.
-  skipped: boolean;
+  // inProgress: boolean;
+  // // If api request is not executed, return true.
+  // skipped: boolean;
 }
 
 interface ICallbacks {
@@ -125,7 +125,7 @@ export const useFetcher = <ReqQuery extends ReqQueryBase, RespBody>({
     data,
     error,
     mutate,
-    inProgress: !data && !error,
-    skipped: swrKey === null || swrKey.length < 1,
+    // inProgress: !data && !error,
+    // skipped: swrKey === null || swrKey.length < 1,
   };
 };
