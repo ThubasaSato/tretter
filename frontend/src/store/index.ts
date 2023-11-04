@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { currentUserReducer } from './slices/currentUserSlice';
+import { loadingsReducer } from './slices/loadingsSlice';
 
 export const store = configureStore({
   reducer: {
     currentUser: currentUserReducer,
+    loadings: loadingsReducer,
   },
   devTools: process.env.NEED_DEBUG === 'true',
 });
