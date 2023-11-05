@@ -5,6 +5,6 @@ module RequestSpecHelpers
 
   def login(login_user:)
     params = { email: login_user.email, password: login_user.password }.to_json
-    post api_v1_user_sessions_path, params: params, headers: REQ_HEADERS
+    post api_v1_user_sessions_path, params:, headers: REQ_HEADERS
   end
 end

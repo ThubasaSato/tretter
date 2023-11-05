@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Api::V1::Devise::CurrentUserController, type: :request do
+RSpec.describe Api::V1::Devise::CurrentUserController do
   let(:user) { create(:user) }
 
   describe '#show' do

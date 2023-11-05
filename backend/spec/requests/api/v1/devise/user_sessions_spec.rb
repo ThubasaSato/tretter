@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Api::V1::Devise::UserSessionsController, type: :request do
+RSpec.describe Api::V1::Devise::UserSessionsController do
   let(:user) { create(:user) }
 
   describe '#create' do
