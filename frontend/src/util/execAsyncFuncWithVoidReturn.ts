@@ -42,7 +42,7 @@ export const execAsyncFuncWithVoidReturn = <T>(
   args: Parameters<typeof asyncFunc> = [],
 ): void => {
   asyncFunc(...args).catch((e: unknown) => {
-    const msg = e instanceof Error ? e.message : "";
+    const msg = e instanceof Error ? e.message : '';
     console.log(`Fail at ${execAsyncFuncWithVoidReturn.name}\n${msg}`);
   });
 };

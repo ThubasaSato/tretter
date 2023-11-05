@@ -1,4 +1,6 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::API
-        include DeviseTokenAuth::Concerns::SetUserByToken
-        include WithRescueConcern
+  include ActionController::Cookies
+  include WithRescueConcern
 end

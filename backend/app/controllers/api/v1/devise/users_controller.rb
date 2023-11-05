@@ -17,7 +17,7 @@ module Api
         def create
           with_rescue(__method__) do
             User.create!(name: params[:name], email: params[:email], password: params[:password])
-            render json: "user is created!", status: :ok
+            render json: 'user is created!', status: :no_content
           end
         end
 
@@ -26,8 +26,6 @@ module Api
         def post_params
           params.permit(:name, :email, :password)
         end
-
-
       end
     end
   end

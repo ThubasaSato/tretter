@@ -1,14 +1,8 @@
-import { useState, useEffect } from "react";
-import {
-  ApiError,
-  handleApiError,
-  handleApiResponse,
-  httpClient,
-  IHandleApiResponseRet,
-} from "../axiosHandlers";
-import { POST_TICKET_PATH } from "./path";
+import { useState, useEffect } from 'react';
+import { ApiError, handleApiError, handleApiResponse, httpClient, IHandleApiResponseRet } from '../axiosHandlers';
+import { POST_TICKET_PATH } from './path';
 
-type Resp = "";
+type Resp = '';
 
 export const postTretterTickets = async () => {
   try {

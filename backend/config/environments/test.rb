@@ -26,6 +26,11 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
+  config.cache_store = :redis_cache_store, { expires_in: 5.seconds,
+                                              namespace: "#{Rails.application.class.module_parent_name.downcase}:#{
+                                                  (ENV.fetch('RAILS_ENV', 'development') + ':').then.detect { |e| e != 'production:' }
+                                                }cache",
+                                              url: "redis://#{ENV.fetch('REDIS_HOST', 'localhost')}:#{ENV.fetch('REDIS_PORT', '6379')}/0" }
 
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
